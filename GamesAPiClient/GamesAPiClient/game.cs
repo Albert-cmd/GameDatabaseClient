@@ -78,6 +78,7 @@ namespace GamesAPiClient
             public string slug { get; set; }
             public int games_count { get; set; }
             public string image_background { get; set; }
+
         }
 
         public class Store2
