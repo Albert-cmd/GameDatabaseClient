@@ -45,22 +45,23 @@
             // gamesList
             // 
             this.gamesList.AutoScroll = true;
+            this.gamesList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.gamesList.ColumnCount = 1;
             this.gamesList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.gamesList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.gamesList.Location = new System.Drawing.Point(21, 49);
+            this.gamesList.Location = new System.Drawing.Point(12, 36);
             this.gamesList.Name = "gamesList";
-            this.gamesList.RowCount = 2;
+            this.gamesList.RowCount = 1;
             this.gamesList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.gamesList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.gamesList.Size = new System.Drawing.Size(740, 326);
+            this.gamesList.Size = new System.Drawing.Size(418, 526);
             this.gamesList.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 474);
+            this.ClientSize = new System.Drawing.Size(1068, 574);
             this.Controls.Add(this.gamesList);
             this.Controls.Add(this.label1);
             this.Name = "Form1";

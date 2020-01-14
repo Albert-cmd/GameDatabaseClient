@@ -16,6 +16,7 @@ namespace GamesAPiClient.Controller
         public game.RootObject Basegames;
         public List<game.Result> gameList;
         public Form1 f1;
+        public List<GameRow> gameRows = new List<GameRow>();
 
         public BaseController()
         {
@@ -40,43 +41,80 @@ namespace GamesAPiClient.Controller
             Application.SetCompatibleTextRenderingDefault(false);
 
             f1 = new Form1();
+            gamesListDisplay();
 
-            GameRow gr;
+            Application.Run(f1);
+
+        }
+
+        private void gamesListDisplay() {
+
             int tag = 0;
 
-            foreach (game.Result gameresult in gameList) {
+            //f1.gamesList.RowCount = gameList.Count();
+            //f1.gamesList.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+
+            f1.gamesList.AutoScroll = false;
+
+            foreach (game.Result gameresult in gameList)
+            {
 
                 try
                 {
 
-                    Console.WriteLine(gameresult.name + " IMAGEN: " + gameresult.background_image + " GENRE: " + gameresult.genres.First().name +
-                    " \nPUNTUACIÓN: " + gameresult.rating + " / 5");
-
-                    gr = new GameRow();
-                    gr.TopLevel = false;
-                    gr.tituloJuego.Text = gameresult.name;
-                    gr.genreJuego.Text = gameresult.genres.First().name;
-                    gr.puntuacioLabel.Text = gameresult.rating.ToString() + " / 5";
-                    gr.Tag = tag;
-                    gr.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-                    gr.Dock = DockStyle.Fill;
-                    gr.Show();
-
-                    f1.gamesList.Controls.Add(gr);
-
-                    tag++;
+                    addGameResult(gameresult, tag);
 
                 }
-                catch (Exception ex) {
+                catch (Exception ex)
+                {
                     //
                 }
+
+                tag++;
             }
 
             tag = 0;
             RemoveEmptyRows();
             f1.Show();
 
-            Application.Run(f1);
+            TableLayoutRowStyleCollection styles =
+            f1.gamesList.RowStyles;
+            foreach (RowStyle style in styles)
+            {
+                // Set the row height to 20 pixels.
+                style.SizeType = SizeType.Absolute;
+                style.Height = 100;
+            }
+
+            int vertScrollWidth = SystemInformation.VerticalScrollBarWidth;
+            f1.gamesList.Padding = new Padding(0, 0, vertScrollWidth, 0);
+
+            f1.gamesList.AutoScroll = true;
+
+        }
+
+        private void addGameResult(game.Result gameresult, int tag) {
+
+            Console.WriteLine(gameresult.name + " IMAGEN: " + gameresult.background_image + " GENRE: " + gameresult.genres.First().name +
+                    " \nPUNTUACIÓN: " + gameresult.rating + " / 5" + " TAG: " + tag);
+
+            GameRow gr = new GameRow();
+            gr.TopLevel = false;
+            gr.tituloJuego.Text = gameresult.name;
+            gr.genreJuego.Text = gameresult.genres.First().name;
+            gr.puntuacioLabel.Text = gameresult.rating.ToString() + " / 5";
+            gr.imagenJuego.ImageLocation = gameresult.background_image;
+            gr.imagenJuego.SizeMode = PictureBoxSizeMode.Zoom;
+            gr.Tag = tag;
+
+            gr.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            gr.Dock = DockStyle.Fill;
+            //gr.AutoSize = true;
+
+            gr.Show();
+            gameRows.Add(gr);
+
+            f1.gamesList.Controls.Add(gr);
 
         }
 

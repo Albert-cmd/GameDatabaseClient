@@ -15,6 +15,13 @@ namespace GamesAPiClient.View
         public GameRow()
         {
             InitializeComponent();
+            tituloJuego.BackColor = Color.Transparent;
+            genreJuego.BackColor = Color.Transparent;
+        }
+
+        private void TituloJuego_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
