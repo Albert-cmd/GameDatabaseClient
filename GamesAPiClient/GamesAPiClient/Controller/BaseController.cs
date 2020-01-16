@@ -27,7 +27,7 @@ namespace GamesAPiClient.Controller
         private void getGames()
         {
 
-            IRestResponse response = requestMe("https://rawg-video-games-database.p.rapidapi.com/games");
+            IRestResponse response = Requester.requestMe("https://rawg-video-games-database.p.rapidapi.com/games");
             Basegames = JsonConvert.DeserializeObject<game.RootObject>(response.Content);
 
             gameList = Basegames.results;
@@ -96,9 +96,9 @@ namespace GamesAPiClient.Controller
         private void addGameResult(game.Result gameresult, int tag) {
 
             Console.WriteLine(gameresult.name + " IMAGEN: " + gameresult.background_image + " GENRE: " + gameresult.genres.First().name +
-                    " \nPUNTUACIÓN: " + gameresult.rating + " / 5" + " TAG: " + tag);
+                    " \nPUNTUACIÓN: " + gameresult.rating + " / 5" + " TAG: " + tag + " ID: " + gameresult.id);
 
-            GameRow gr = new GameRow();
+            GameRow gr = new GameRow(this.f1, gameresult, gameresult.id);
             gr.TopLevel = false;
             gr.tituloJuego.Text = gameresult.name;
             gr.genreJuego.Text = gameresult.genres.First().name;
@@ -139,21 +139,6 @@ namespace GamesAPiClient.Controller
                 }
             }
         }
-
-        public IRestResponse requestMe(String url)
-        {
-
-            IRestResponse response;
-            var client = new RestClient(url);
-            var request = new RestRequest(Method.GET);
-            request.AddHeader("x-rapidapi-host", "rawg-video-games-database.p.rapidapi.com");
-            request.AddHeader("x-rapidapi-key", "7de8eca4d1msh159330a1f5925e2p1d38e5jsn879fa8a3c4ff");
-            response = client.Execute(request);
-            return response;
-            
-
-        }
-
 
     }
 }

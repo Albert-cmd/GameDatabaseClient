@@ -16,5 +16,20 @@ namespace GamesAPiClient
         {
             InitializeComponent();
         }
+
+        private void DescripcioJocSeleccionat_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DescripcioJocSeleccionat_Enter(object sender, EventArgs e)
+        {
+            ActiveControl = gamesList;
+        }
+
+        private void JocSeleccionatLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

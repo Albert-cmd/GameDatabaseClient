@@ -60,11 +60,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\BaseController.cs" />
-    <Compile Include="View\Form1.cs">
+    <Compile Include="Controller\Requester.cs" />
+    <Compile Include="View\Portada.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="View\Portada.Designer.cs">
+      <DependentUpon>Portada.cs</DependentUpon>
     </Compile>
     <Compile Include="game.cs" />
     <Compile Include="Program.cs" />
@@ -76,8 +77,8 @@
     <Compile Include="View\GameRow.Designer.cs">
       <DependentUpon>GameRow.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="View\Portada.resx">
+      <DependentUpon>Portada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

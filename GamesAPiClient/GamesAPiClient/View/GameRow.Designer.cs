@@ -69,6 +69,7 @@
             this.puntuacioLabel.TabIndex = 3;
             this.puntuacioLabel.Text = "5.00 / 5";
             this.puntuacioLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.puntuacioLabel.Click += new System.EventHandler(this.PuntuacioLabel_Click);
             // 
             // imagenJuego
             // 
@@ -90,6 +91,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GameRow";
             this.Text = "GameRow";
+            this.Load += new System.EventHandler(this.GameRow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imagenJuego)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
