@@ -24,6 +24,42 @@ namespace GamesAPiClient.Controller
             runGui();
         }
 
+        private void triggers() {
+
+            f1.redditLogo.MouseEnter += redditMosueEnter;
+            f1.redditLogo.MouseLeave += redditMosueLeave;
+
+            f1.videoLogo.MouseEnter += videoMosueEnter;
+            f1.videoLogo.MouseLeave += videoMouseLeave;
+
+        }
+
+        private void videoMosueEnter(object sender, EventArgs e)
+        {
+            f1.Cursor = Cursors.Hand;
+            f1.videoLogo.Image = GamesAPiClient.Properties.Resources.video_camera_icon_bw;
+        }
+
+        private void videoMouseLeave(object sender, EventArgs e)
+        {
+            f1.Cursor = Cursors.Default;
+            f1.videoLogo.Image = GamesAPiClient.Properties.Resources.video_camera_icon;
+        }
+
+        private void redditMosueEnter(object sender, EventArgs e)
+        {
+
+            f1.Cursor = Cursors.Hand;
+            f1.redditLogo.Image = GamesAPiClient.Properties.Resources._1024px_Reddit_logo_orange_bw;
+
+        }
+
+        private void redditMosueLeave(object sender, EventArgs e)
+        {
+            f1.Cursor = Cursors.Default;
+            f1.redditLogo.Image = GamesAPiClient.Properties.Resources._1024px_Reddit_logo_orange_svg;
+        }
+
         private void getGames()
         {
 
@@ -41,6 +77,7 @@ namespace GamesAPiClient.Controller
             Application.SetCompatibleTextRenderingDefault(false);
 
             f1 = new Form1();
+            triggers();
             gamesListDisplay();
 
             Application.Run(f1);

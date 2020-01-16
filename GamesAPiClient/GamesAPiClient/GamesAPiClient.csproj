@@ -110,5 +110,17 @@
   <ItemGroup>
     <None Include="Resources\c25ebb8eb08790277ae2e2dce0d62174.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1024px-Reddit_logo_orange.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1024px-Reddit_logo_orange_bw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video-camera-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video-camera-icon-bw.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

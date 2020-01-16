@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using System.Web;
 using System.IO;
 using System.Net;
+using System.Reflection;
 
 namespace GamesAPiClient.View
 {
@@ -61,6 +62,9 @@ namespace GamesAPiClient.View
         private void gameclick(object sender, EventArgs e)
         {
 
+            // EVITA RESET DEL SCROLL DE LA LLISTA (A DALT DEL TOT) QUAN ES FA CLICK EN QUALSEVOL DELS ELEMENTS
+            form1.gamesList.Focus();
+
             form1.jocSeleccionatLabel.Text = gameresult.name.ToString();
             form1.genreJocSeleccionat.Text = gameresult.genres.First().name.ToString();
 
@@ -68,10 +72,76 @@ namespace GamesAPiClient.View
 
             IRestResponse response = Requester.requestMe("https://rawg-video-games-database.p.rapidapi.com/games/" + idJuego);
             Basegame = JsonConvert.DeserializeObject<game.RootObject>(response.Content);
-            Console.WriteLine(response.Content);
+            //Console.WriteLine(response.Content);
+
+            redditLink();
+            videoLink();
 
             form1.descripcioJocSeleccionat.Text = filtrarHtml(WebUtility.HtmlDecode(Basegame.description));
             form1.puntuacioJocSeleccionat.Text = gameresult.rating.ToString() + " / 5";
+
+        }
+
+        private void videoLink() {
+
+            removeEvents(form1.videoLogo);
+
+            if (!gameresult.clip.clip.Equals(""))
+            {
+                form1.videoLogo.Visible = true;
+                form1.videoLogo.Enabled = true;
+                form1.videoLogo.Image = GamesAPiClient.Properties.Resources.video_camera_icon;
+                form1.videoLogo.Click += videoClick;
+            }
+            else {
+                form1.videoLogo.Image = GamesAPiClient.Properties.Resources.video_camera_icon_bw;
+                form1.videoLogo.Enabled = false;
+            }
+
+        }
+
+        private void videoClick(object sender, EventArgs e)
+        {
+
+            System.Diagnostics.Process.Start(gameresult.clip.clip);
+
+        }
+
+        private void redditLink() {
+
+            //Console.WriteLine("REDDIT URL: " + Basegame.reddit_url);
+
+            // REMOVE ALL EVENTS FIRST
+            removeEvents(form1.redditLogo);
+
+            if (!Basegame.reddit_url.Equals(""))
+            {
+                form1.redditLogo.Visible = true;
+                form1.redditLogo.Enabled = true;
+                form1.redditLogo.Image = GamesAPiClient.Properties.Resources._1024px_Reddit_logo_orange_svg;
+                form1.redditLogo.Click += redditClick;
+            }
+            else {
+                form1.redditLogo.Image = GamesAPiClient.Properties.Resources._1024px_Reddit_logo_orange_bw;
+                form1.redditLogo.Enabled = false;
+            }
+
+        }
+
+        private void removeEvents(Object o) {
+
+            FieldInfo f1 = typeof(Control).GetField("EventClick", BindingFlags.Static | BindingFlags.NonPublic);
+            object obj = f1.GetValue(o);
+            PropertyInfo pi = o.GetType().GetProperty("Events", BindingFlags.NonPublic | BindingFlags.Instance);
+            EventHandlerList list = (EventHandlerList)pi.GetValue(o, null);
+            list.RemoveHandler(obj, list[obj]);
+
+        }
+
+        private void redditClick(object sender, EventArgs e)
+        {
+
+            System.Diagnostics.Process.Start(Basegame.reddit_url);
 
         }
 

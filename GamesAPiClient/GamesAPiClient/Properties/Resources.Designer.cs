@@ -63,9 +63,49 @@ namespace GamesAPiClient.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1024px_Reddit_logo_orange_bw {
+            get {
+                object obj = ResourceManager.GetObject("1024px-Reddit_logo_orange_bw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1024px_Reddit_logo_orange_svg {
+            get {
+                object obj = ResourceManager.GetObject("1024px-Reddit_logo_orange.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap c25ebb8eb08790277ae2e2dce0d62174 {
             get {
                 object obj = ResourceManager.GetObject("c25ebb8eb08790277ae2e2dce0d62174", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap video_camera_icon {
+            get {
+                object obj = ResourceManager.GetObject("video-camera-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap video_camera_icon_bw {
+            get {
+                object obj = ResourceManager.GetObject("video-camera-icon-bw", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

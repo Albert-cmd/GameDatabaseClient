@@ -188,6 +188,9 @@ namespace GamesAPiClient
             public string description { get; set; }
             public Filters filters { get; set; }
             public List<string> nofollow_collections { get; set; }
+            public string reddit_url { get; set; }
+            public string reddit_name { get; set; }
+            public string reddit_description { get; set; }
         }
 
     }

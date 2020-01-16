@@ -35,6 +35,10 @@
             this.genreJocSeleccionat = new System.Windows.Forms.Label();
             this.descripcioJocSeleccionat = new System.Windows.Forms.RichTextBox();
             this.line = new System.Windows.Forms.Panel();
+            this.videoLogo = new System.Windows.Forms.PictureBox();
+            this.redditLogo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.videoLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redditLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -83,6 +87,7 @@
             this.puntuacioJocSeleccionat.Size = new System.Drawing.Size(70, 23);
             this.puntuacioJocSeleccionat.TabIndex = 3;
             this.puntuacioJocSeleccionat.Text = "4,50 / 5";
+            this.puntuacioJocSeleccionat.Click += new System.EventHandler(this.PuntuacioJocSeleccionat_Click);
             // 
             // genreJocSeleccionat
             // 
@@ -113,11 +118,37 @@
             this.line.Size = new System.Drawing.Size(577, 3);
             this.line.TabIndex = 6;
             // 
+            // videoLogo
+            // 
+            this.videoLogo.Image = global::GamesAPiClient.Properties.Resources.video_camera_icon;
+            this.videoLogo.InitialImage = global::GamesAPiClient.Properties.Resources._1024px_Reddit_logo_orange_svg;
+            this.videoLogo.Location = new System.Drawing.Point(966, 103);
+            this.videoLogo.Name = "videoLogo";
+            this.videoLogo.Size = new System.Drawing.Size(34, 34);
+            this.videoLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.videoLogo.TabIndex = 8;
+            this.videoLogo.TabStop = false;
+            this.videoLogo.Click += new System.EventHandler(this.VideoLogo_Click);
+            // 
+            // redditLogo
+            // 
+            this.redditLogo.Image = global::GamesAPiClient.Properties.Resources._1024px_Reddit_logo_orange_svg;
+            this.redditLogo.InitialImage = global::GamesAPiClient.Properties.Resources._1024px_Reddit_logo_orange_svg;
+            this.redditLogo.Location = new System.Drawing.Point(1006, 103);
+            this.redditLogo.Name = "redditLogo";
+            this.redditLogo.Size = new System.Drawing.Size(34, 34);
+            this.redditLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.redditLogo.TabIndex = 7;
+            this.redditLogo.TabStop = false;
+            this.redditLogo.Click += new System.EventHandler(this.RedditLogo_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1068, 574);
+            this.Controls.Add(this.videoLogo);
+            this.Controls.Add(this.redditLogo);
             this.Controls.Add(this.line);
             this.Controls.Add(this.descripcioJocSeleccionat);
             this.Controls.Add(this.genreJocSeleccionat);
@@ -127,6 +158,8 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = " ";
+            ((System.ComponentModel.ISupportInitialize)(this.videoLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redditLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,6 +174,8 @@
         public System.Windows.Forms.Label puntuacioJocSeleccionat;
         private System.Windows.Forms.Panel line;
         public System.Windows.Forms.RichTextBox descripcioJocSeleccionat;
+        public System.Windows.Forms.PictureBox redditLogo;
+        public System.Windows.Forms.PictureBox videoLogo;
     }
 }
 
