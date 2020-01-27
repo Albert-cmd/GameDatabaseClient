@@ -1,4 +1,5 @@
-﻿using GamesAPiClient.View;
+﻿using GamesAPiClient.Model;
+using GamesAPiClient.View;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
@@ -8,19 +9,22 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static GamesAPiClient.game;
 
 namespace GamesAPiClient.Controller
 {
     public class BaseController
     {
 
+        public user usuari;
         public game.RootObject Basegames;
         public List<game.Result> gameList;
         public Form1 f1;
         public List<GameRow> gameRows = new List<GameRow>();
 
-        public BaseController()
+        public BaseController(user u)
         {
+            this.usuari = u;
             getGames();
             runGui();
         }
@@ -65,10 +69,16 @@ namespace GamesAPiClient.Controller
         private void getGames()
         {
 
-            IRestResponse response = Requester.requestMe("https://rawg-video-games-database.p.rapidapi.com/games");
-            Basegames = JsonConvert.DeserializeObject<game.RootObject>(response.Content);
+            try
+            {
+                IRestResponse response = Requester.requestMe("https://rawg-video-games-database.p.rapidapi.com/games");
+                Basegames = JsonConvert.DeserializeObject<game.RootObject>(response.Content);
 
-            gameList = Basegames.results;
+                gameList = Basegames.results;
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex);
+            }
 
         }
 
@@ -79,7 +89,34 @@ namespace GamesAPiClient.Controller
             triggers();
             gamesListDisplay();
 
+            firstGameRow();
+            fillUser();
+
            // Application.Run(f1);
+
+        }
+
+        private void fillUser() {
+
+            try
+            {
+                f1.usuariLabel.Text = usuari.username;
+            }
+            catch (Exception ex) {
+                //
+            }
+
+        }
+
+        private void firstGameRow() {
+
+            try
+            {
+                gameRows.First().gameFill();
+            }
+            catch (Exception ex) {
+                //
+            }
 
         }
 
@@ -132,7 +169,12 @@ namespace GamesAPiClient.Controller
         private void addGameResult(game.Result gameresult, int tag) {
 
             Console.WriteLine(gameresult.name + " IMAGEN: " + gameresult.background_image + " GENRE: " + gameresult.genres.First().name +
-                    " \nPUNTUACIÓN: " + gameresult.rating + " / 5" + " TAG: " + tag + " ID: " + gameresult.id);
+                    " \nPUNTUACIÓN: " + gameresult.rating + " / 5" + " TAG: " + tag + " ID: " + gameresult.id + "\nPlatforms: ");
+
+
+            foreach (Platform p in gameresult.platforms) {
+                Console.WriteLine(p.platform.name);
+            }
 
             GameRow gr = new GameRow(this.f1, gameresult, gameresult.id);
             gr.TopLevel = false;

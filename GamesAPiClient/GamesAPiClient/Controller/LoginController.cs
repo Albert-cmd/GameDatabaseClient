@@ -16,6 +16,7 @@ namespace GamesAPiClient.Controller
     {
 
         public Login login;
+        public user u = new user();
 
         public string username = "";
         public string password = "";
@@ -143,7 +144,7 @@ namespace GamesAPiClient.Controller
 
             // load salt and key from database
 
-            user u = LoginRepository.GetUsuari(username);
+            u = LoginRepository.GetUsuari(username);
 
             try
             {
@@ -179,7 +180,7 @@ namespace GamesAPiClient.Controller
 
         public void IniciarBase() {
 
-            BaseController bc = new BaseController();
+            BaseController bc = new BaseController(u);
 
         }
 

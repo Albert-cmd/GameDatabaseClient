@@ -14,6 +14,7 @@ using System.Web;
 using System.IO;
 using System.Net;
 using System.Reflection;
+using static GamesAPiClient.game;
 
 namespace GamesAPiClient.View
 {
@@ -62,6 +63,12 @@ namespace GamesAPiClient.View
         private void gameclick(object sender, EventArgs e)
         {
 
+            gameFill();
+
+        }
+
+        public void gameFill() {
+
             // EVITA RESET DEL SCROLL DE LA LLISTA (A DALT DEL TOT) QUAN ES FA CLICK EN QUALSEVOL DELS ELEMENTS
             form1.gamesList.Focus();
 
@@ -79,6 +86,23 @@ namespace GamesAPiClient.View
 
             form1.descripcioJocSeleccionat.Text = filtrarHtml(WebUtility.HtmlDecode(Basegame.description));
             form1.puntuacioJocSeleccionat.Text = gameresult.rating.ToString() + " / 5";
+
+            string plataformes = "";
+
+            int num = 0;
+
+            foreach (Platform p in gameresult.platforms)
+            {
+                if (num <= 6)
+                {
+                    plataformes += " | " + p.platform.name;
+                }
+                num++;
+            }
+
+            num = 0;
+
+            form1.plataformesInput.Text = plataformes;
 
         }
 
