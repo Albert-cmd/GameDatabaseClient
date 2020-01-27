@@ -40,6 +40,7 @@
             this.tituloJuego.AutoSize = true;
             this.tituloJuego.BackColor = System.Drawing.Color.Transparent;
             this.tituloJuego.Font = new System.Drawing.Font("Calibri Light", 20.25F);
+            this.tituloJuego.ForeColor = System.Drawing.Color.White;
             this.tituloJuego.Location = new System.Drawing.Point(83, 12);
             this.tituloJuego.Name = "tituloJuego";
             this.tituloJuego.Size = new System.Drawing.Size(99, 33);
@@ -51,6 +52,7 @@
             this.genreJuego.AutoSize = true;
             this.genreJuego.BackColor = System.Drawing.Color.Transparent;
             this.genreJuego.Font = new System.Drawing.Font("Calibri Light", 16.25F);
+            this.genreJuego.ForeColor = System.Drawing.Color.White;
             this.genreJuego.Location = new System.Drawing.Point(84, 54);
             this.genreJuego.Name = "genreJuego";
             this.genreJuego.Size = new System.Drawing.Size(81, 27);
@@ -62,7 +64,7 @@
             this.puntuacioLabel.AutoSize = true;
             this.puntuacioLabel.BackColor = System.Drawing.Color.Transparent;
             this.puntuacioLabel.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.puntuacioLabel.ForeColor = System.Drawing.Color.ForestGreen;
+            this.puntuacioLabel.ForeColor = System.Drawing.Color.Lime;
             this.puntuacioLabel.Location = new System.Drawing.Point(264, 54);
             this.puntuacioLabel.Name = "puntuacioLabel";
             this.puntuacioLabel.Size = new System.Drawing.Size(86, 29);
@@ -83,6 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(366, 102);
             this.Controls.Add(this.puntuacioLabel);
             this.Controls.Add(this.genreJuego);

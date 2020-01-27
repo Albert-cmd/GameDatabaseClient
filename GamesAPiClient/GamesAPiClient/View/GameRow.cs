@@ -159,13 +159,13 @@ namespace GamesAPiClient.View
 
         private void mouseenter(object sender, EventArgs e)
         {
-            this.BackColor = Color.FromArgb(192, 192, 192);
+            this.BackColor = Color.FromArgb(64,64,64);
             this.Cursor = Cursors.Hand;
         }
 
         private void mouseleave(object sender, EventArgs e)
         {
-            this.BackColor = SystemColors.Control;
+            this.BackColor = Color.FromArgb(35, 35, 35);
             this.Cursor = Cursors.Default;
         }
 
