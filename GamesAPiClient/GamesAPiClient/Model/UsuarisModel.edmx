@@ -5,26 +5,17 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="API_UsersModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'API_Users.dbo.users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="users">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="username" />
-            <PropertyRef Name="password" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="key" Type="varbinary" MaxLength="50" Nullable="false" />
+          <Property Name="salt" Type="varbinary" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityContainer Name="API_UsersModelStoreContainer">
-          <EntitySet Name="users" EntityType="Self.users" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [users].[id] AS [id], 
-    [users].[username] AS [username], 
-    [users].[password] AS [password]
-    FROM [dbo].[users] AS [users]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -34,12 +25,11 @@ warning 6002: The table/view 'API_Users.dbo.users' does not have a primary key d
         <EntityType Name="user">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="username" />
-            <PropertyRef Name="password" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="key" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
+          <Property Name="salt" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
         </EntityType>
         <EntityContainer Name="APIUsersEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="users" EntityType="Self.user" />
@@ -55,7 +45,8 @@ warning 6002: The table/view 'API_Users.dbo.users' does not have a primary key d
               <MappingFragment StoreEntitySet="users">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="username" ColumnName="username" />
-                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="key" ColumnName="key" />
+                <ScalarProperty Name="salt" ColumnName="salt" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -19,8 +19,14 @@ namespace GamesAPiClient
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());*/
 
-            BaseController bc = new BaseController();
+            //BaseController bc = new BaseController();
 
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            LoginController lc = new LoginController();
+
+            Application.Run();
         }
     }
 }

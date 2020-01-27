@@ -45,6 +45,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(216, 24);
@@ -58,6 +59,7 @@
             this.gamesList.ColumnCount = 1;
             this.gamesList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.gamesList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.gamesList.ForeColor = System.Drawing.Color.White;
             this.gamesList.Location = new System.Drawing.Point(12, 70);
             this.gamesList.Name = "gamesList";
             this.gamesList.RowCount = 1;
@@ -70,6 +72,7 @@
             // 
             this.jocSeleccionatLabel.AutoSize = true;
             this.jocSeleccionatLabel.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jocSeleccionatLabel.ForeColor = System.Drawing.Color.White;
             this.jocSeleccionatLabel.Location = new System.Drawing.Point(455, 70);
             this.jocSeleccionatLabel.Name = "jocSeleccionatLabel";
             this.jocSeleccionatLabel.Size = new System.Drawing.Size(280, 26);
@@ -81,7 +84,7 @@
             // 
             this.puntuacioJocSeleccionat.AutoSize = true;
             this.puntuacioJocSeleccionat.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.puntuacioJocSeleccionat.ForeColor = System.Drawing.Color.DarkGreen;
+            this.puntuacioJocSeleccionat.ForeColor = System.Drawing.Color.Lime;
             this.puntuacioJocSeleccionat.Location = new System.Drawing.Point(459, 118);
             this.puntuacioJocSeleccionat.Name = "puntuacioJocSeleccionat";
             this.puntuacioJocSeleccionat.Size = new System.Drawing.Size(70, 23);
@@ -93,6 +96,7 @@
             // 
             this.genreJocSeleccionat.AutoSize = true;
             this.genreJocSeleccionat.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genreJocSeleccionat.ForeColor = System.Drawing.Color.White;
             this.genreJocSeleccionat.Location = new System.Drawing.Point(460, 100);
             this.genreJocSeleccionat.Name = "genreJocSeleccionat";
             this.genreJocSeleccionat.Size = new System.Drawing.Size(57, 18);
@@ -101,7 +105,9 @@
             // 
             // descripcioJocSeleccionat
             // 
+            this.descripcioJocSeleccionat.BackColor = System.Drawing.Color.Black;
             this.descripcioJocSeleccionat.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.descripcioJocSeleccionat.ForeColor = System.Drawing.Color.White;
             this.descripcioJocSeleccionat.Location = new System.Drawing.Point(460, 164);
             this.descripcioJocSeleccionat.Name = "descripcioJocSeleccionat";
             this.descripcioJocSeleccionat.ReadOnly = true;
@@ -146,6 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1068, 574);
             this.Controls.Add(this.videoLogo);
             this.Controls.Add(this.redditLogo);

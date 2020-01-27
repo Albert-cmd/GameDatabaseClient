@@ -55,9 +55,8 @@
             this.usernameInput.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameInput.ForeColor = System.Drawing.Color.White;
             this.usernameInput.Location = new System.Drawing.Point(37, 127);
-            this.usernameInput.Multiline = true;
             this.usernameInput.Name = "usernameInput";
-            this.usernameInput.Size = new System.Drawing.Size(318, 22);
+            this.usernameInput.Size = new System.Drawing.Size(318, 24);
             this.usernameInput.TabIndex = 1;
             // 
             // panel1
@@ -84,10 +83,9 @@
             this.passwordInput.ForeColor = System.Drawing.Color.White;
             this.passwordInput.HideSelection = false;
             this.passwordInput.Location = new System.Drawing.Point(37, 180);
-            this.passwordInput.Multiline = true;
             this.passwordInput.Name = "passwordInput";
             this.passwordInput.PasswordChar = '*';
-            this.passwordInput.Size = new System.Drawing.Size(318, 22);
+            this.passwordInput.Size = new System.Drawing.Size(318, 24);
             this.passwordInput.TabIndex = 3;
             // 
             // loginButton

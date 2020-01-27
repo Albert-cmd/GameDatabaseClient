@@ -68,7 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\BaseController.cs" />
+    <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\Requester.cs" />
+    <Compile Include="Model\LoginRepository.cs" />
     <Compile Include="Model\user.cs">
       <DependentUpon>UsuarisModel.tt</DependentUpon>
     </Compile>
@@ -167,8 +169,8 @@
   <ItemGroup>
     <Content Include="Model\UsuarisModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>UsuarisModel.Context.cs</LastGenOutput>
       <DependentUpon>UsuarisModel.edmx</DependentUpon>
+      <LastGenOutput>UsuarisModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model\UsuarisModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -180,5 +182,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -16,6 +16,26 @@ namespace GamesAPiClient.Model
     {
         public int id { get; set; }
         public string username { get; set; }
-        public string password { get; set; }
+        public byte[] key { get; set; }
+        public byte[] salt { get; set; }
+
+        public user(int id, string username, byte[] key, byte[] salt)
+        {
+            this.id = id;
+            this.username = username;
+            this.key = key;
+            this.salt = salt;
+        }
+
+        public user()
+        {
+        }
+
+        public user(string username, byte[] key, byte[] salt)
+        {
+            this.username = username;
+            this.key = key;
+            this.salt = salt;
+        }
     }
 }

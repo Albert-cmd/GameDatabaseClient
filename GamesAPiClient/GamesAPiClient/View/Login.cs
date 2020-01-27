@@ -16,5 +16,6 @@ namespace GamesAPiClient.View
         {
             InitializeComponent();
         }
+
     }
 }

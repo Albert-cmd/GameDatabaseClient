@@ -14,26 +14,15 @@ namespace GamesAPiClient.Controller
     public class BaseController
     {
 
-        public string username = "";
-        public string password = "";
-
-        private string hash = "";
-
         public game.RootObject Basegames;
         public List<game.Result> gameList;
         public Form1 f1;
-        public Login login;
         public List<GameRow> gameRows = new List<GameRow>();
 
         public BaseController()
         {
-
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
-            getLogin();
-            //getGames();
-            //runGui();
+            getGames();
+            runGui();
         }
 
         private void triggers() {
@@ -72,114 +61,6 @@ namespace GamesAPiClient.Controller
             f1.redditLogo.Image = GamesAPiClient.Properties.Resources._1024px_Reddit_logo_orange_svg;
         }
 
-        private void getLogin() {
-
-            login = new Login();
-            triggersLogin();
-
-            Application.Run(login);
-
-        }
-
-        public void triggersLogin() {
-
-            login.usernameInput.TextChanged += usernameInputChanged;
-            login.passwordInput.TextChanged += passwordInputChanged;
-
-            login.loginButton.Click += loginClick;
-            login.registerButton.Click += registreClick;
-
-        }
-
-        private void registreClick(object sender, EventArgs e)
-        {
-            registreVoid();
-        }
-
-        private void loginClick(object sender, EventArgs e)
-        {
-
-            loginVoid();
-
-        }
-
-        public void loginVoid() {
-
-            
-
-        }
-
-
-        public void registreVoid() {
-
-            hasher(password);
-
-        }
-
-        public void hasher(string password) {
-
-            using (var deriveBytes = new Rfc2898DeriveBytes(password, 20))
-            {
-                byte[] salt = deriveBytes.Salt;
-                byte[] key = deriveBytes.GetBytes(20);  // derive a 20-byte key
-
-                // save salt and key to database
-                Console.WriteLine(salt);
-            }
-
-        }
-
-        public void checkHash(string password) {
-
-            // comprova si la password és correcte
-
-            byte[] salt = {0};
-            byte[] key = {0};
-
-            // load salt and key from database
-
-            using (var deriveBytes = new Rfc2898DeriveBytes(password, salt))
-            {
-                byte[] newKey = deriveBytes.GetBytes(20);  // derive a 20-byte key
-
-                if (!newKey.SequenceEqual(key))
-                    throw new InvalidOperationException("Password is invalid!");
-            }
-
-        }
-
-        private void passwordInputChanged(object sender, EventArgs e)
-        {
-            password = "";
-
-            try
-            {
-                password = login.passwordInput.Text.ToString();
-            }
-            catch (Exception ex)
-            {
-
-                password = "";
-
-            }
-        }
-
-        private void usernameInputChanged(object sender, EventArgs e)
-        {
-
-            username = "";
-
-            try
-            {
-                username = login.usernameInput.Text.ToString();
-            }
-            catch (Exception ex) {
-
-                username = "";
-
-            }
-
-        }
 
         private void getGames()
         {
@@ -198,7 +79,7 @@ namespace GamesAPiClient.Controller
             triggers();
             gamesListDisplay();
 
-            Application.Run(f1);
+           // Application.Run(f1);
 
         }
 
