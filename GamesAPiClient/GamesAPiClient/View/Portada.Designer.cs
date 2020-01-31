@@ -45,6 +45,11 @@
             this.videoLogo = new System.Windows.Forms.PictureBox();
             this.redditLogo = new System.Windows.Forms.PictureBox();
             this.usuariLabel = new System.Windows.Forms.Label();
+            this.genreDropdown = new System.Windows.Forms.ComboBox();
+            this.genereLabel = new System.Windows.Forms.Label();
+            this.numJocsL = new System.Windows.Forms.Label();
+            this.numJocsLabel = new System.Windows.Forms.Label();
+            this.tancarSessioLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.usuariImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoDiv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.videoLogo)).BeginInit();
@@ -70,7 +75,7 @@
             this.gamesList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.gamesList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.gamesList.ForeColor = System.Drawing.Color.White;
-            this.gamesList.Location = new System.Drawing.Point(12, 46);
+            this.gamesList.Location = new System.Drawing.Point(12, 81);
             this.gamesList.Name = "gamesList";
             this.gamesList.RowCount = 1;
             this.gamesList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -84,7 +89,7 @@
             this.jocSeleccionatLabel.BackColor = System.Drawing.Color.Black;
             this.jocSeleccionatLabel.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.jocSeleccionatLabel.ForeColor = System.Drawing.Color.White;
-            this.jocSeleccionatLabel.Location = new System.Drawing.Point(455, 53);
+            this.jocSeleccionatLabel.Location = new System.Drawing.Point(455, 88);
             this.jocSeleccionatLabel.Name = "jocSeleccionatLabel";
             this.jocSeleccionatLabel.Size = new System.Drawing.Size(280, 26);
             this.jocSeleccionatLabel.TabIndex = 2;
@@ -97,7 +102,7 @@
             this.puntuacioJocSeleccionat.BackColor = System.Drawing.Color.Black;
             this.puntuacioJocSeleccionat.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.puntuacioJocSeleccionat.ForeColor = System.Drawing.Color.Lime;
-            this.puntuacioJocSeleccionat.Location = new System.Drawing.Point(459, 101);
+            this.puntuacioJocSeleccionat.Location = new System.Drawing.Point(459, 136);
             this.puntuacioJocSeleccionat.Name = "puntuacioJocSeleccionat";
             this.puntuacioJocSeleccionat.Size = new System.Drawing.Size(70, 23);
             this.puntuacioJocSeleccionat.TabIndex = 3;
@@ -110,7 +115,7 @@
             this.genreJocSeleccionat.BackColor = System.Drawing.Color.Black;
             this.genreJocSeleccionat.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.genreJocSeleccionat.ForeColor = System.Drawing.Color.White;
-            this.genreJocSeleccionat.Location = new System.Drawing.Point(460, 83);
+            this.genreJocSeleccionat.Location = new System.Drawing.Point(460, 118);
             this.genreJocSeleccionat.Name = "genreJocSeleccionat";
             this.genreJocSeleccionat.Size = new System.Drawing.Size(57, 18);
             this.genreJocSeleccionat.TabIndex = 4;
@@ -121,7 +126,7 @@
             this.descripcioJocSeleccionat.BackColor = System.Drawing.Color.Black;
             this.descripcioJocSeleccionat.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.descripcioJocSeleccionat.ForeColor = System.Drawing.Color.White;
-            this.descripcioJocSeleccionat.Location = new System.Drawing.Point(450, 143);
+            this.descripcioJocSeleccionat.Location = new System.Drawing.Point(450, 178);
             this.descripcioJocSeleccionat.Name = "descripcioJocSeleccionat";
             this.descripcioJocSeleccionat.ReadOnly = true;
             this.descripcioJocSeleccionat.Size = new System.Drawing.Size(606, 239);
@@ -132,7 +137,7 @@
             // line
             // 
             this.line.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.line.Location = new System.Drawing.Point(450, 127);
+            this.line.Location = new System.Drawing.Point(450, 162);
             this.line.Name = "line";
             this.line.Size = new System.Drawing.Size(607, 2);
             this.line.TabIndex = 6;
@@ -140,7 +145,7 @@
             // backgroundHeader
             // 
             this.backgroundHeader.BackColor = System.Drawing.Color.Black;
-            this.backgroundHeader.Location = new System.Drawing.Point(450, 47);
+            this.backgroundHeader.Location = new System.Drawing.Point(450, 82);
             this.backgroundHeader.Name = "backgroundHeader";
             this.backgroundHeader.Size = new System.Drawing.Size(606, 79);
             this.backgroundHeader.TabIndex = 9;
@@ -148,7 +153,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel1.Location = new System.Drawing.Point(450, 388);
+            this.panel1.Location = new System.Drawing.Point(450, 423);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(607, 2);
             this.panel1.TabIndex = 7;
@@ -158,7 +163,7 @@
             this.detallsLabel.AutoSize = true;
             this.detallsLabel.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.detallsLabel.ForeColor = System.Drawing.Color.White;
-            this.detallsLabel.Location = new System.Drawing.Point(450, 397);
+            this.detallsLabel.Location = new System.Drawing.Point(450, 432);
             this.detallsLabel.Name = "detallsLabel";
             this.detallsLabel.Size = new System.Drawing.Size(188, 26);
             this.detallsLabel.TabIndex = 11;
@@ -169,7 +174,7 @@
             this.plataformaLabel.AutoSize = true;
             this.plataformaLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.plataformaLabel.ForeColor = System.Drawing.Color.White;
-            this.plataformaLabel.Location = new System.Drawing.Point(451, 434);
+            this.plataformaLabel.Location = new System.Drawing.Point(451, 469);
             this.plataformaLabel.Name = "plataformaLabel";
             this.plataformaLabel.Size = new System.Drawing.Size(95, 19);
             this.plataformaLabel.TabIndex = 12;
@@ -180,7 +185,7 @@
             this.plataformesInput.AutoSize = true;
             this.plataformesInput.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.plataformesInput.ForeColor = System.Drawing.Color.White;
-            this.plataformesInput.Location = new System.Drawing.Point(552, 434);
+            this.plataformesInput.Location = new System.Drawing.Point(552, 469);
             this.plataformesInput.Name = "plataformesInput";
             this.plataformesInput.Size = new System.Drawing.Size(415, 19);
             this.plataformesInput.TabIndex = 13;
@@ -189,9 +194,9 @@
             // usuariImg
             // 
             this.usuariImg.Image = global::GamesAPiClient.Properties.Resources.usuari;
-            this.usuariImg.Location = new System.Drawing.Point(1027, 12);
+            this.usuariImg.Location = new System.Drawing.Point(1015, 3);
             this.usuariImg.Name = "usuariImg";
-            this.usuariImg.Size = new System.Drawing.Size(29, 28);
+            this.usuariImg.Size = new System.Drawing.Size(42, 37);
             this.usuariImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.usuariImg.TabIndex = 14;
             this.usuariImg.TabStop = false;
@@ -211,7 +216,7 @@
             this.videoLogo.BackColor = System.Drawing.Color.Black;
             this.videoLogo.Image = global::GamesAPiClient.Properties.Resources.video_camera_icon;
             this.videoLogo.InitialImage = global::GamesAPiClient.Properties.Resources._1024px_Reddit_logo_orange_svg;
-            this.videoLogo.Location = new System.Drawing.Point(966, 86);
+            this.videoLogo.Location = new System.Drawing.Point(966, 121);
             this.videoLogo.Name = "videoLogo";
             this.videoLogo.Size = new System.Drawing.Size(34, 34);
             this.videoLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -224,7 +229,7 @@
             this.redditLogo.BackColor = System.Drawing.Color.Black;
             this.redditLogo.Image = global::GamesAPiClient.Properties.Resources._1024px_Reddit_logo_orange_svg;
             this.redditLogo.InitialImage = global::GamesAPiClient.Properties.Resources._1024px_Reddit_logo_orange_svg;
-            this.redditLogo.Location = new System.Drawing.Point(1006, 86);
+            this.redditLogo.Location = new System.Drawing.Point(1006, 121);
             this.redditLogo.Name = "redditLogo";
             this.redditLogo.Size = new System.Drawing.Size(34, 34);
             this.redditLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -235,21 +240,82 @@
             // usuariLabel
             // 
             this.usuariLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.usuariLabel.Font = new System.Drawing.Font("Calibri", 14F);
+            this.usuariLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usuariLabel.ForeColor = System.Drawing.Color.White;
-            this.usuariLabel.Location = new System.Drawing.Point(894, 17);
+            this.usuariLabel.Location = new System.Drawing.Point(873, 3);
             this.usuariLabel.Name = "usuariLabel";
             this.usuariLabel.Size = new System.Drawing.Size(136, 23);
             this.usuariLabel.TabIndex = 15;
             this.usuariLabel.Text = "USUARI";
             this.usuariLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // genreDropdown
+            // 
+            this.genreDropdown.BackColor = System.Drawing.Color.Black;
+            this.genreDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.genreDropdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.genreDropdown.ForeColor = System.Drawing.Color.White;
+            this.genreDropdown.FormattingEnabled = true;
+            this.genreDropdown.Location = new System.Drawing.Point(78, 55);
+            this.genreDropdown.Name = "genreDropdown";
+            this.genreDropdown.Size = new System.Drawing.Size(217, 21);
+            this.genreDropdown.TabIndex = 16;
+            // 
+            // genereLabel
+            // 
+            this.genereLabel.AutoSize = true;
+            this.genereLabel.BackColor = System.Drawing.Color.Black;
+            this.genereLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genereLabel.ForeColor = System.Drawing.Color.White;
+            this.genereLabel.Location = new System.Drawing.Point(12, 55);
+            this.genereLabel.Name = "genereLabel";
+            this.genereLabel.Size = new System.Drawing.Size(60, 19);
+            this.genereLabel.TabIndex = 17;
+            this.genereLabel.Text = "Gènere:";
+            // 
+            // numJocsL
+            // 
+            this.numJocsL.AutoSize = true;
+            this.numJocsL.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numJocsL.ForeColor = System.Drawing.Color.White;
+            this.numJocsL.Location = new System.Drawing.Point(303, 53);
+            this.numJocsL.Name = "numJocsL";
+            this.numJocsL.Size = new System.Drawing.Size(47, 23);
+            this.numJocsL.TabIndex = 18;
+            this.numJocsL.Text = "Jocs:";
+            // 
+            // numJocsLabel
+            // 
+            this.numJocsLabel.AutoSize = true;
+            this.numJocsLabel.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numJocsLabel.ForeColor = System.Drawing.Color.White;
+            this.numJocsLabel.Location = new System.Drawing.Point(346, 53);
+            this.numJocsLabel.Name = "numJocsLabel";
+            this.numJocsLabel.Size = new System.Drawing.Size(40, 23);
+            this.numJocsLabel.TabIndex = 19;
+            this.numJocsLabel.Text = "000";
+            // 
+            // tancarSessioLabel
+            // 
+            this.tancarSessioLabel.AutoSize = true;
+            this.tancarSessioLabel.ForeColor = System.Drawing.Color.Gray;
+            this.tancarSessioLabel.Location = new System.Drawing.Point(936, 26);
+            this.tancarSessioLabel.Name = "tancarSessioLabel";
+            this.tancarSessioLabel.Size = new System.Drawing.Size(73, 13);
+            this.tancarSessioLabel.TabIndex = 20;
+            this.tancarSessioLabel.Text = "Tancar sessió";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1068, 574);
+            this.ClientSize = new System.Drawing.Size(1068, 613);
+            this.Controls.Add(this.tancarSessioLabel);
+            this.Controls.Add(this.numJocsLabel);
+            this.Controls.Add(this.numJocsL);
+            this.Controls.Add(this.genereLabel);
+            this.Controls.Add(this.genreDropdown);
             this.Controls.Add(this.usuariLabel);
             this.Controls.Add(this.usuariImg);
             this.Controls.Add(this.plataformesInput);
@@ -297,6 +363,11 @@
         public System.Windows.Forms.Label plataformesInput;
         private System.Windows.Forms.PictureBox usuariImg;
         public System.Windows.Forms.Label usuariLabel;
+        public System.Windows.Forms.ComboBox genreDropdown;
+        private System.Windows.Forms.Label genereLabel;
+        private System.Windows.Forms.Label numJocsL;
+        public System.Windows.Forms.Label numJocsLabel;
+        public System.Windows.Forms.Label tancarSessioLabel;
     }
 }
 

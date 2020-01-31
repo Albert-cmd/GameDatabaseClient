@@ -18,7 +18,16 @@ namespace ModelV2
 
         public static user GetUsuari(string username)
         {
-            user u = dataContext.users.Where(x => x.username == username).SingleOrDefault();
+            user u;
+
+            try
+            {
+                u = dataContext.users.Where(x => x.username == username).SingleOrDefault();
+            }
+            catch (Exception ex) {
+                u = null;
+            }
+
             return u;
         }
 

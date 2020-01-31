@@ -79,6 +79,10 @@ namespace GamesAPiClient
             public int games_count { get; set; }
             public string image_background { get; set; }
 
+            public override string ToString()
+            {
+                return this.name;
+            }
         }
 
         public class Store2

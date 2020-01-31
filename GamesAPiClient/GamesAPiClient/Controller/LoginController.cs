@@ -23,6 +23,11 @@ namespace GamesAPiClient.Controller
 
         private string hash = "";
 
+        public BaseController bc;
+        public Popout popout = new Popout();
+
+        public bool valid = false;
+
         public LoginController() {
 
             login = new Login();
@@ -108,7 +113,40 @@ namespace GamesAPiClient.Controller
         public void registreVoid()
         {
 
-            hasher(password);
+            if (LoginRepository.GetUsuari(username) == null)
+            {
+                valid = true;
+            }
+            else {
+                valid = false;
+                popoutVoid("registre");
+            }
+
+            if (username != null && username != "" &&
+                password != null && password != "" && valid)
+            {
+                hasher(password);
+                checkHash(password);
+            }
+
+        }
+
+        public void popoutVoid(string type) {
+
+            popout = new Popout();
+
+            switch (type) {
+
+                case "registre":
+                    popout.errorTextLabel.Text = "Error al registrar-se";
+                    break;
+                case "login":
+                    popout.errorTextLabel.Text = "Comprovi les seves dades d'usuari";
+                    break;
+
+            }
+
+            popout.Show();
 
         }
 
@@ -144,7 +182,7 @@ namespace GamesAPiClient.Controller
 
             // load salt and key from database
 
-            u = LoginRepository.GetUsuari(username);
+            u = LoginRepository.GetUsuari(username.Trim());
 
             try
             {
@@ -158,6 +196,7 @@ namespace GamesAPiClient.Controller
                     if (!newKey.SequenceEqual(key))
                     {
                         Console.WriteLine("Password is invalid!");
+                        popoutVoid("login");
                     }
                     else
                     {
@@ -174,13 +213,14 @@ namespace GamesAPiClient.Controller
             }
             catch (Exception ex) {
                 Console.WriteLine(ex);
+                popoutVoid("login");
             }
 
         }
 
         public void IniciarBase() {
 
-            BaseController bc = new BaseController(u);
+            bc = new BaseController(u, this);
 
         }
 
